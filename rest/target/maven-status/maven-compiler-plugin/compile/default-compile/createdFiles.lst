@@ -1,0 +1,4 @@
+br/com/myBudget/config/ProductionConfiguration.class
+br/com/myBudget/rest/movimento/DespesaController.class
+br/com/myBudget/myBudgetApplication.class
+br/com/myBudget/rest/seguranca/UsuarioController.class

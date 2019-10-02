@@ -1,0 +1,4 @@
+br/com/myBudget/service/seguranca/UsuarioService.class
+br/com/myBudget/service/movimento/DespesaService.class
+br/com/myBudget/service/movimento/DespesaServiceImpl.class
+br/com/myBudget/service/seguranca/UsuarioServiceImpl.class

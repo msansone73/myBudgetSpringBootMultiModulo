@@ -1,6 +1,6 @@
 package br.com.myBudget.service.movimento;
 
-import java.awt.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +22,12 @@ public class DespesaServiceImpl implements DespesaService {
 	@Override
 	public Despesa inserir(Despesa despesa) {
 		return despesaRepository.save(despesa);
+	}
+
+	@Override
+	public Despesa findById(Long id) {
+		Optional<Despesa> d = despesaRepository.findById(id);
+		return d.isPresent()?d.get():null;
 	}
 
 

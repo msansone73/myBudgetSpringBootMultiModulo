@@ -23,7 +23,6 @@ public class UsuarioController {
     public ResponseEntity getUsuarioById(@PathVariable Long id) {
         Usuario u = usuarioService.lerById(id);
         return new ResponseEntity<Usuario>(u, HttpStatus.OK);
-
     }
 
     @GetMapping("usuario/")
@@ -32,9 +31,18 @@ public class UsuarioController {
     }
 
     @PostMapping("usuario/")
-    public Usuario inserirUsuario(Usuario usuario){
+    public Usuario inserirUsuario(@RequestBody Usuario usuario){
         return usuarioService.inserir(usuario);
     }
+    
+    @DeleteMapping("usuario/{id}")
+    public void deleteUsuario(@PathVariable Long id) {
+    	usuarioService.delete(id);
+    }
 
+    @GetMapping("usuario/login/email/{email}/senha/{senha}")
+    public Usuario login(@PathVariable String email, @PathVariable String senha) {
+    	return usuarioService.login(email, senha);
+    }
 
 }

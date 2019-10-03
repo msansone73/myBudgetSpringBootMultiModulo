@@ -29,4 +29,16 @@ public class UsuarioServiceImpl implements  UsuarioService {
     public List<Usuario> lerTodos() {
         return usuarioRepository.findAll();
     }
+
+	@Override
+	public void delete(Long id) {
+		usuarioRepository.deleteById(id);
+	}
+
+	@Override
+	public Usuario login(String email, String senha) {
+		return usuarioRepository.findByEmailAndSenha(email,senha);
+	}
+	
+	
 }

@@ -1,6 +1,5 @@
 package br.com.myBudget.rest.movimento;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.myBudget.model.movimento.Despesa;
 import br.com.myBudget.service.movimento.DespesaService;
 
-
-
 @RestController
 @RequestMapping("/movimento/")
 public class DespesaController {
 
 	@Autowired
 	DespesaService despesaService; 
+
+	@GetMapping("/despesa/{id}")
+	public Despesa findByDespesa(Long id) {
+		return despesaService.findById(id);
+	}
 	
 	@GetMapping("/despesa/")
 	public List<Despesa> findAll(){
